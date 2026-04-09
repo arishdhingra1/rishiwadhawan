@@ -57,6 +57,16 @@ export function Footer() {
           ))}
         </nav>
       </div>
+      <p className="site-footer__credit">
+        Powered by{" "}
+        <a
+          href="https://mineledgerai.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          mineledgerai.com
+        </a>
+      </p>
     </footer>
   );
 }
