@@ -1,3 +1,25 @@
+/* Skip link — visible on keyboard focus (a11y + crawlable main landmark) */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0.75rem;
+  z-index: 200;
+  padding: 0.65rem 1rem;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #0f172a;
+  background: #5eead4;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  box-shadow: var(--shadow-md);
+}
+
+.skip-link:focus {
+  left: 0.75rem;
+  outline: 2px solid #f8fafc;
+  outline-offset: 2px;
+}
+
 /* Header — dark bar (finance / RA brochure style) */
 .site-header {
   position: fixed;

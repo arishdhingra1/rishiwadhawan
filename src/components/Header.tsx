@@ -20,6 +20,9 @@ export function Header() {
 
   return (
     <>
+      <a href="#main-content" className="skip-link">
+        Skip to main content
+      </a>
       <header className="site-header">
         <div className="site-header__inner">
           <Link to="/" className="brand" onClick={() => setOpen(false)}>

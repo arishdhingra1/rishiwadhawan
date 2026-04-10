@@ -61,3 +61,9 @@ export function publicSiteUrl(): string {
   const u = import.meta.env.VITE_PUBLIC_SITE_URL?.trim();
   return u && u.length > 0 ? u.replace(/\/$/, "") : "";
 }
+
+/** Canonical origin for SEO, JSON-LD, and OG URLs (falls back to production domain). */
+export function siteUrl(): string {
+  const u = publicSiteUrl();
+  return u.length > 0 ? u : "https://rishicapitaladvisory.com";
+}

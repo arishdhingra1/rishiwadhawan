@@ -18,7 +18,7 @@ export function LegalPage() {
   }, [hash]);
 
   return (
-    <main className="legal-page">
+    <main id="main-content" className="legal-page">
       <section
         id="complaint-data"
         className="section legal-page__complaints"

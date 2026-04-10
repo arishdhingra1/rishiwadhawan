@@ -1,0 +1,6 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Sitemap (canonical host)
+Sitemap: https://rishicapitaladvisory.com/sitemap.xml

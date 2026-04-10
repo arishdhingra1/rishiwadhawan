@@ -18,7 +18,7 @@ export function HomePage() {
   }, [hash]);
 
   return (
-    <main>
+    <main id="main-content">
       <Hero />
       <About />
       <Subscribe />

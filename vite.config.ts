@@ -8,9 +8,24 @@ import react from "@vitejs/plugin-react";
  */
 const base = process.env.VITE_BASE_PATH ?? "/";
 
+function siteUrlFromEnv(): string {
+  const u = process.env.VITE_PUBLIC_SITE_URL?.trim();
+  if (u) return u.replace(/\/$/, "");
+  return "https://rishicapitaladvisory.com";
+}
+
 export default defineConfig({
   base,
-  plugins: [react()],
+  plugins: [
+    react(),
+    {
+      name: "html-inject-site-url",
+      transformIndexHtml(html) {
+        const site = siteUrlFromEnv();
+        return html.replace(/__SITE_URL__/g, site);
+      },
+    },
+  ],
   server: {
     port: 3000,
     strictPort: true,
