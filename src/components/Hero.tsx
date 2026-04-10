@@ -27,8 +27,8 @@ export function Hero() {
             disclosures that hold up when markets move fast.
           </p>
           <div className="hero__actions">
-            <Link className="btn btn--primary" to="/#services">
-              Research stack
+            <Link className="btn btn--primary" to="/#about">
+              About
             </Link>
             <Link className="btn btn--ghost" to="/legal#disclaimer">
               Risk &amp; legal

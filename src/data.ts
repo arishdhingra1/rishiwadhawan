@@ -40,7 +40,6 @@ export type NavItem = {
 
 export const navItems: readonly NavItem[] = [
   { label: "Home", to: "/" },
-  { label: "Our Services", to: "/#services" },
   { label: "About", to: "/#about" },
   { label: "Contact", to: "/#contact" },
   { label: "FAQ", to: "/#faq" },

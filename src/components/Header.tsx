@@ -23,7 +23,7 @@ export function Header() {
         <div className="site-header__inner">
           <Link to="/" className="brand" onClick={() => setOpen(false)}>
             <span className="brand__name">Rishi Wadhawan</span>
-            <span className="brand__tag">Equity desk · SEBI RA</span>
+            <span className="brand__tag">SEBI RESEARCH ANALYST</span>
           </Link>
           <nav className="nav-desktop" aria-label="Primary">
             {navItems.map(({ label, to }) => (

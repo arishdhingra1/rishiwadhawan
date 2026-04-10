@@ -1354,6 +1354,10 @@
   margin-bottom: 0;
 }
 
+.legal-page__charter-link-wrap {
+  margin-top: 1.25rem;
+}
+
 /* Legal page bottom strip (reference: RA disclosure footers) */
 .legal-subnav {
   background: linear-gradient(180deg, #134e4a 0%, #0f766e 100%);
