@@ -4,9 +4,9 @@ export const analyst = {
   registrationNo: "INH000025726",
   email: "wadhawan_sonu@rediffmail.com",
   /** Display format */
-  phone: "+91 98168 05766",
+  phone: "+91 95013 29973",
   /** E.164-style, no spaces — for tel: links */
-  phoneTel: "+919816805766",
+  phoneTel: "+919501329973",
   contactPerson: "Rishi Wadhawan",
   address:
     "Flat No 5A 1402, Suncity Parikrama Group Housing, Sector-20, Panchkula, Haryana 134116",
