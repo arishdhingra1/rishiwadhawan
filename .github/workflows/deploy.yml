@@ -1,6 +1,9 @@
-# Build static site and deploy to GitHub Pages.
-# Repo settings → Pages → Source: GitHub Actions.
-# Later: add a custom domain in Pages settings and use VITE_BASE_PATH=/ for builds if needed.
+# GitHub Pages — build & deploy. Add custom domain in repo → Settings → Pages.
+#
+# DNS (at Hostinger or your registrar): point the domain to GitHub — see
+# https://docs.github.com/pages/configuring-a-custom-domain-for-your-github-pages-site
+#
+# This site uses the custom domain rishicapitaladvisory.com → Vite base "/".
 
 name: Deploy to GitHub Pages
 
@@ -29,30 +32,23 @@ jobs:
           node-version: "20"
           cache: npm
 
-      - name: Set Vite base path for GitHub Pages
-        id: base
+      - name: Vite base path & site URL (custom domain)
+        id: envs
         run: |
-          # Optional: set repository variable VITE_BASE_PATH to "/" when you add a custom domain.
-          CUSTOM='${{ vars.VITE_BASE_PATH }}'
-          if [ -n "$CUSTOM" ]; then
-            echo "path=$CUSTOM" >> "$GITHUB_OUTPUT"
-            echo "Using repo variable VITE_BASE_PATH."
-            exit 0
-          fi
-          NAME="${{ github.event.repository.name }}"
-          if [[ "$NAME" == *.github.io ]]; then
-            echo "path=/" >> "$GITHUB_OUTPUT"
-            echo "Using root base for user/org GitHub Pages site."
-          else
-            echo "path=/$NAME/" >> "$GITHUB_OUTPUT"
-            echo "Using project base /$NAME/ for GitHub Pages."
-          fi
+          # Optional overrides: repo → Settings → Variables → Actions
+          BASE='${{ vars.VITE_BASE_PATH }}'
+          PUB='${{ vars.VITE_PUBLIC_SITE_URL }}'
+          if [ -z "$BASE" ]; then BASE="/"; fi
+          if [ -z "$PUB" ]; then PUB="https://rishicapitaladvisory.com"; fi
+          echo "path=$BASE" >> "$GITHUB_OUTPUT"
+          echo "pub=$PUB" >> "$GITHUB_OUTPUT"
+          echo "Using VITE_BASE_PATH=$BASE and VITE_PUBLIC_SITE_URL=$PUB"
 
       - run: npm ci
       - run: npm run build
         env:
-          VITE_BASE_PATH: ${{ steps.base.outputs.path }}
-          VITE_PUBLIC_SITE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
+          VITE_BASE_PATH: ${{ steps.envs.outputs.path }}
+          VITE_PUBLIC_SITE_URL: ${{ steps.envs.outputs.pub }}
 
       - uses: actions/upload-pages-artifact@v3
         with:
