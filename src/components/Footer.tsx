@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { analyst, navItems, socialLinks } from "../data";
-import { SocialIcon } from "./SocialIcon";
+import { analyst, navItems } from "../data";
+import { SocialLinksList } from "./SocialLinksList";
 
 export function Footer() {
   return (
@@ -17,37 +17,7 @@ export function Footer() {
             {" · "}
             SEBI RA {analyst.registrationNo}
           </p>
-          <ul className="footer-social" aria-label="Social media">
-            {socialLinks.map(({ id, label, href }) => {
-              const isPlaceholder = href === "#";
-              return (
-                <li key={id}>
-                  <a
-                    href={href}
-                    className="footer-social__link"
-                    aria-label={
-                      isPlaceholder ? `${label} — link coming soon` : label
-                    }
-                    title={
-                      isPlaceholder ? `${label} — add your profile URL in data` : label
-                    }
-                    onClick={
-                      isPlaceholder
-                        ? (e) => {
-                            e.preventDefault();
-                          }
-                        : undefined
-                    }
-                    {...(!isPlaceholder && href.startsWith("http")
-                      ? { target: "_blank", rel: "noopener noreferrer" }
-                      : {})}
-                  >
-                    <SocialIcon id={id} className="footer-social__icon" />
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
+          <SocialLinksList variant="footer" />
         </div>
         <nav className="footer-nav" aria-label="Quick links">
           {navItems.map(({ label, to }) => (

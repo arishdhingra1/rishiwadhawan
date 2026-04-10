@@ -18,18 +18,32 @@ export const analyst = {
   workingHours: "9:00 AM to 6:00 PM (IST)",
 } as const;
 
-export type SocialNetworkId = "linkedin" | "x" | "youtube" | "instagram";
+export type SocialNetworkId =
+  | "linkedin"
+  | "x"
+  | "youtube"
+  | "instagram"
+  | "telegram";
 
-/** Placeholder social links — replace `href` with real profile URLs when ready */
+/** Order: active channels first; `#` = placeholder (shown but not linked) */
 export const socialLinks: readonly {
   id: SocialNetworkId;
   label: string;
   href: string;
 }[] = [
+  {
+    id: "instagram",
+    label: "Instagram",
+    href: "https://www.instagram.com/rishicapitaladvisory/",
+  },
+  {
+    id: "telegram",
+    label: "Telegram",
+    href: "https://t.me/+l0NaQkAXvZMzM2U1",
+  },
   { id: "linkedin", label: "LinkedIn", href: "#" },
   { id: "x", label: "X", href: "#" },
   { id: "youtube", label: "YouTube", href: "#" },
-  { id: "instagram", label: "Instagram", href: "#" },
 ];
 
 /** Matches common RA site nav (e.g. tradersstreet.in): home anchors + Legal route */

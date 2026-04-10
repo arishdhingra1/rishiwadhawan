@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { navItems } from "../data";
+import { SocialLinksList } from "./SocialLinksList";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -42,6 +43,9 @@ export function Header() {
             ))}
           </nav>
           <div className="site-header__tail">
+            <div className="site-header__social site-header__social--desktop">
+              <SocialLinksList variant="header" ariaLabel="Social links" />
+            </div>
             <button
               type="button"
               className="menu-toggle"
@@ -68,6 +72,14 @@ export function Header() {
               {label}
             </Link>
           ))}
+          <div className="mobile-drawer__social-block">
+            <p className="mobile-drawer__social-label">Follow</p>
+            <SocialLinksList
+              variant="footer"
+              className="mobile-drawer__social-icons"
+              ariaLabel="Social media"
+            />
+          </div>
         </div>
       ) : null}
     </>

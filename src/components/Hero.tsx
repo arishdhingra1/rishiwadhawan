@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { analyst } from "../data";
 import { HeroAtmosphere } from "./HeroAtmosphere";
 import { HeroTicker } from "./HeroTicker";
+import { SocialLinksList } from "./SocialLinksList";
 
 export function Hero() {
   return (
@@ -33,6 +34,10 @@ export function Hero() {
             <Link className="btn btn--ghost" to="/legal#disclaimer">
               Risk &amp; legal
             </Link>
+          </div>
+          <div className="hero__social-row">
+            <span className="hero__social-label">Follow</span>
+            <SocialLinksList variant="hero" />
           </div>
           <HeroTicker />
         </div>

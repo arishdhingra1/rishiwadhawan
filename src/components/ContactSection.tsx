@@ -1,5 +1,6 @@
 import { useCallback, useState } from "react";
 import { analyst } from "../data";
+import { SocialLinksList } from "./SocialLinksList";
 
 const RISHI_FIRST =
   analyst.contactPerson.split(/\s+/)[0] ?? "Rishi";
@@ -113,6 +114,10 @@ export function ContactSection() {
                 <span>{analyst.registrationNo}</span>
               </li>
             </ul>
+            <div className="contact-card__social">
+              <p className="contact-card__social-label">Social</p>
+              <SocialLinksList variant="contact" />
+            </div>
           </div>
           <div className="contact-card">
             <h3>Send a message</h3>
