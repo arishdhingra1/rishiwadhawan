@@ -1,0 +1,46 @@
+# Deploy static build to Hostinger via FTP.
+# Setup (one-time):
+# 1. hPanel → Files → FTP Accounts — create user or use main FTP; note host (often ftp.rishicapitaladvisory.com or server IP).
+# 2. GitHub repo → Settings → Secrets and variables → Actions → New repository secret:
+#    FTP_SERVER, FTP_USERNAME, FTP_PASSWORD
+# 3. Push to main or run workflow manually.
+#
+# Do NOT put API tokens or passwords in this file. The Hostinger API token is for REST API (DNS/VPS), not FTP.
+
+name: Deploy to Hostinger (FTP)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["main"]
+    paths:
+      - "src/**"
+      - "public/**"
+      - "index.html"
+      - "vite.config.ts"
+      - "package.json"
+      - ".github/workflows/deploy-hostinger.yml"
+
+jobs:
+  ftp-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Build for custom domain (root base)
+        run: npm ci && npm run build:hostinger
+
+      - name: Upload to Hostinger
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./dist/
+          server-dir: ./public_html/
+          dangerous-clean-slate: false
