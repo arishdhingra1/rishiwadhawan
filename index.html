@@ -2,6 +2,24 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!-- GitHub Pages → custom domain (Hostinger). No-op on rishicapitaladvisory.com / localhost. -->
+    <script>
+      (function () {
+        var h = location.hostname;
+        if (h !== "arishdhingra1.github.io") return;
+        var base = "/rishiwadhawan";
+        var p = location.pathname;
+        if (!p.startsWith(base)) return;
+        var rest = p.slice(base.length) || "/";
+        if (rest.charAt(0) !== "/") rest = "/" + rest;
+        location.replace(
+          "https://rishicapitaladvisory.com" +
+            rest +
+            location.search +
+            location.hash
+        );
+      })();
+    </script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta
       name="viewport"
