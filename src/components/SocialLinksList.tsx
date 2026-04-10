@@ -46,35 +46,20 @@ export function SocialLinksList({
       className={[c.ul, className].filter(Boolean).join(" ")}
       aria-label={ariaLabel}
     >
-      {socialLinks.map(({ id, label, href }) => {
-        const isPlaceholder = href === "#";
-        return (
-          <li key={id}>
-            <a
-              href={href}
-              className={c.link}
-              aria-label={
-                isPlaceholder ? `${label} — link coming soon` : label
-              }
-              title={
-                isPlaceholder ? `${label} — add profile URL in data.ts` : label
-              }
-              onClick={
-                isPlaceholder
-                  ? (e) => {
-                      e.preventDefault();
-                    }
-                  : undefined
-              }
-              {...(!isPlaceholder && href.startsWith("http")
-                ? { target: "_blank", rel: "noopener noreferrer" }
-                : {})}
-            >
-              <SocialIcon id={id} className={c.icon} />
-            </a>
-          </li>
-        );
-      })}
+      {socialLinks.map(({ id, label, href }) => (
+        <li key={id}>
+          <a
+            href={href}
+            className={c.link}
+            aria-label={label}
+            title={label}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <SocialIcon id={id} className={c.icon} />
+          </a>
+        </li>
+      ))}
     </ul>
   );
 }

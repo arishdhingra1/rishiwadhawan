@@ -25,7 +25,7 @@ export type SocialNetworkId =
   | "instagram"
   | "telegram";
 
-/** Order: active channels first; `#` = placeholder (shown but not linked) */
+/** Add entries here when you have real profile URLs — no placeholders */
 export const socialLinks: readonly {
   id: SocialNetworkId;
   label: string;
@@ -41,9 +41,6 @@ export const socialLinks: readonly {
     label: "Telegram",
     href: "https://t.me/+l0NaQkAXvZMzM2U1",
   },
-  { id: "linkedin", label: "LinkedIn", href: "#" },
-  { id: "x", label: "X", href: "#" },
-  { id: "youtube", label: "YouTube", href: "#" },
 ];
 
 /** Matches common RA site nav (e.g. tradersstreet.in): home anchors + Legal route */
