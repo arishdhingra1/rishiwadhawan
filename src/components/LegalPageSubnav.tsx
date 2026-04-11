@@ -6,6 +6,8 @@ const links: { label: string; to: string; external?: boolean }[] = [
   { label: "Investor Charter", to: "/legal#investor-charter" },
   { label: "Redressal grievances", to: "/legal#grievance" },
   { label: "Standard disclosure", to: "/legal#complaint-data" },
+  { label: "Payment", to: "/payment" },
+  { label: "Refund policy", to: "/refund-policy" },
   { label: "SEBI address", to: SEBI_CONTACT_URL, external: true },
   { label: "Terms & conditions", to: "/legal#disclaimer" },
 ];

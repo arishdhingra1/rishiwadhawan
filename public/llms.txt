@@ -5,6 +5,8 @@
 ## Site
 - Home: https://rishicapitaladvisory.com/
 - Legal & disclosures: https://rishicapitaladvisory.com/legal
+- Payment: https://rishicapitaladvisory.com/payment
+- Refund policy: https://rishicapitaladvisory.com/refund-policy
 
 ## Contact
 - Email and phone appear on the Contact section of the homepage.

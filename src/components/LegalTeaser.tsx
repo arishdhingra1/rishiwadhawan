@@ -21,6 +21,12 @@ export function LegalTeaser() {
           <Link className="btn btn--ghost" to="/legal#disclaimer">
             Full disclaimer
           </Link>
+          <Link className="btn btn--ghost" to="/payment">
+            Payment
+          </Link>
+          <Link className="btn btn--ghost" to="/refund-policy">
+            Refund policy
+          </Link>
         </div>
       </div>
     </section>

@@ -1812,3 +1812,273 @@
     padding: 1.15rem 0.9rem;
   }
 }
+
+/* Refund policy page */
+.policy-page__hero {
+  padding-top: calc(var(--header-h) + 1.5rem);
+  padding-bottom: 3rem;
+}
+
+.policy-page__inner {
+  max-width: 42rem;
+}
+
+.policy-page__lead {
+  max-width: 40rem;
+}
+
+.policy-page__box {
+  margin-top: 1.25rem;
+}
+
+.policy-page__list {
+  margin: 0;
+  padding: 0 0 0 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.policy-page__list li::marker {
+  color: var(--accent-deep);
+}
+
+.policy-page__contact-intro {
+  margin: 1.75rem 0 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.policy-page__contact {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+
+.policy-page__contact a {
+  font-weight: 600;
+  color: var(--accent-deep);
+}
+
+.policy-page__hours {
+  display: inline-block;
+  margin-top: 0.35rem;
+  font-size: 0.82rem;
+}
+
+.policy-page__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+/* Payment page */
+.payment-page {
+  min-height: calc(100vh - var(--header-h));
+  padding-top: var(--header-h);
+}
+
+.payment-page__shell {
+  position: relative;
+  min-height: calc(100vh - var(--header-h));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem var(--section-pad-x) 3rem;
+  overflow: hidden;
+}
+
+.payment-page__glow {
+  position: absolute;
+  inset: -40% -20% auto;
+  height: min(70vh, 520px);
+  background: radial-gradient(
+    ellipse 80% 60% at 50% 0%,
+    rgba(45, 212, 191, 0.18),
+    transparent 55%
+  );
+  pointer-events: none;
+}
+
+.payment-page__panel {
+  position: relative;
+  z-index: 1;
+  width: min(28rem, 100%);
+  text-align: center;
+}
+
+.payment-page__kicker {
+  margin: 0 0 0.5rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
+}
+
+.payment-page__title {
+  margin: 0 0 0.65rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.65rem, 4vw, 2.1rem);
+  font-weight: 650;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--text);
+}
+
+.payment-page__subtitle {
+  margin: 0 0 1.75rem;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+.payment-page__card {
+  text-align: left;
+  padding: 1.5rem 1.35rem;
+  border-radius: calc(var(--radius) + 6px);
+  border: 1px solid rgba(13, 148, 136, 0.22);
+  background: linear-gradient(
+    165deg,
+    rgba(255, 255, 255, 0.96),
+    rgba(248, 250, 252, 0.98)
+  );
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.8) inset,
+    0 20px 50px -24px rgba(15, 23, 42, 0.18);
+}
+
+.payment-page__card-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  margin-bottom: 0.85rem;
+}
+
+.payment-page__card-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.payment-page__card-pill {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(13, 148, 136, 0.1);
+  color: var(--accent-deep);
+  border: 1px solid rgba(13, 148, 136, 0.2);
+}
+
+.payment-page__card-note {
+  margin: 0 0 1.25rem;
+  font-size: 0.84rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+.payment-page__card-note a {
+  font-weight: 600;
+  color: var(--accent-deep);
+}
+
+.payment-page__cta {
+  width: 100%;
+  justify-content: center;
+  gap: 0.6rem;
+  font-size: 1rem;
+  padding: 0.95rem 1.25rem;
+}
+
+.payment-page__cta-arrow {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  transition: transform 0.2s ease;
+}
+
+@media (hover: hover) {
+  .payment-page__cta:hover .payment-page__cta-arrow {
+    transform: translate(2px, -2px);
+  }
+}
+
+.payment-page__fine {
+  margin: 1rem 0 0;
+  font-size: 0.75rem;
+  line-height: 1.45;
+  color: var(--text-muted);
+}
+
+.payment-page__fine a {
+  font-weight: 600;
+  color: var(--accent-deep);
+}
+
+.payment-page__trust {
+  list-style: none;
+  margin: 1.75rem 0 0;
+  padding: 0;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  font-size: 0.84rem;
+  line-height: 1.45;
+  color: var(--text-muted);
+}
+
+.payment-page__trust li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+}
+
+.payment-page__trust-icon {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background: rgba(13, 148, 136, 0.12);
+  color: var(--accent-deep);
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.payment-page__trust a {
+  font-weight: 600;
+  color: var(--accent-deep);
+}
+
+.payment-page__footer-links {
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem 0.5rem;
+}
+
+.payment-page__footer-links a {
+  font-weight: 600;
+  color: var(--accent-deep);
+}
+
+.payment-page__sep {
+  color: var(--text-muted);
+  opacity: 0.6;
+}

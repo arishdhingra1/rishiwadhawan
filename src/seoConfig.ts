@@ -23,6 +23,16 @@ export const SEO_PAGES: Record<
     description:
       "Complaint data, investor charter, grievance escalation, and full risk disclaimers for Rishi Wadhawan, SEBI registered research analyst INH000025726.",
   },
+  "/payment": {
+    title: `Payment | ${SITE_NAME}`,
+    description:
+      "Secure payment for research services via our checkout partner. SEBI RA INH000025726. Review the disclaimer and refund policy before paying.",
+  },
+  "/refund-policy": {
+    title: `Refund policy | ${SITE_NAME}`,
+    description:
+      "Refund and subscription cancellation policy for Rishi Wadhawan, SEBI registered research analyst—including pro-rata refunds for unused periods per SEBI norms.",
+  },
 };
 
 export function seoForPath(pathname: string) {

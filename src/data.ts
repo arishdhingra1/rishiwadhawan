@@ -43,6 +43,10 @@ export const socialLinks: readonly {
   },
 ];
 
+/** Hosted checkout (Cosmofeed) — update if the payment link changes */
+export const PAYMENT_CHECKOUT_URL =
+  "https://cosmofeed.com/vig/69d9deaf2f8f3b0014cd10a9" as const;
+
 /** Matches common RA site nav (e.g. tradersstreet.in): home anchors + Legal route */
 export type NavItem = {
   label: string;
@@ -54,6 +58,8 @@ export const navItems: readonly NavItem[] = [
   { label: "About", to: "/#about" },
   { label: "Contact", to: "/#contact" },
   { label: "FAQ", to: "/#faq" },
+  { label: "Payment", to: "/payment" },
+  { label: "Refund", to: "/refund-policy" },
   { label: "Legal", to: "/legal" },
 ] as const;
 
