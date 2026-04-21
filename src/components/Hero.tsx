@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { analyst } from "../data";
 import { HeroAtmosphere } from "./HeroAtmosphere";
-import { HeroTicker } from "./HeroTicker";
 import { SocialLinksList } from "./SocialLinksList";
 
 export function Hero() {
@@ -39,7 +38,6 @@ export function Hero() {
             <span className="hero__social-label">Follow</span>
             <SocialLinksList variant="hero" />
           </div>
-          <HeroTicker />
         </div>
         <aside id="sebi" className="hero__panel" aria-label="Registration summary">
           <div className="hero__panel-head">

@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Hero } from "../components/Hero";
+import { HeroTicker } from "../components/HeroTicker";
 import { About } from "../components/About";
 import { Subscribe } from "../components/Subscribe";
 import { ContactSection } from "../components/ContactSection";
@@ -19,6 +20,9 @@ export function HomePage() {
 
   return (
     <main id="main-content">
+      <div className="home-ticker-strip" aria-label="Market snapshot">
+        <HeroTicker />
+      </div>
       <Hero />
       <About />
       <Subscribe />
