@@ -1,7 +1,24 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { analyst, PAYMENT_CHECKOUT_URL } from "../data";
+import { analyst, PAYMENT_CHECKOUT_URL, PAYMENT_UPI_VPA } from "../data";
+
+const UPI_DEEP_LINK = `upi://pay?pa=${encodeURIComponent(
+  PAYMENT_UPI_VPA,
+)}&pn=${encodeURIComponent(analyst.name)}&cu=INR`;
 
 export function PaymentPage() {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(PAYMENT_UPI_VPA);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 2000);
+    } catch {
+      setCopied(false);
+    }
+  };
+
   return (
     <main id="main-content" className="payment-page">
       <div className="payment-page__shell">
@@ -43,6 +60,56 @@ export function PaymentPage() {
               Opens Cosmofeed (external). If nothing opens, copy the link from
               your browser bar or contact us at{" "}
               <a href={`mailto:${analyst.email}`}>{analyst.email}</a>.
+            </p>
+          </div>
+
+          <div className="payment-page__divider" role="separator">
+            <span>or pay directly via UPI</span>
+          </div>
+
+          <div className="payment-page__card payment-page__card--upi">
+            <div className="payment-page__card-row">
+              <span className="payment-page__card-label">UPI / VPA</span>
+              <span className="payment-page__card-pill payment-page__card-pill--upi">
+                Instant · No fees
+              </span>
+            </div>
+
+            <div className="payment-page__upi-id">
+              <span className="payment-page__upi-mark" aria-hidden>
+                ⚡
+              </span>
+              <code className="payment-page__upi-vpa">{PAYMENT_UPI_VPA}</code>
+              <button
+                type="button"
+                className="payment-page__upi-copy"
+                onClick={handleCopy}
+                aria-label={`Copy UPI ID ${PAYMENT_UPI_VPA}`}
+              >
+                {copied ? "Copied ✓" : "Copy"}
+              </button>
+            </div>
+
+            <p className="payment-page__upi-apps">
+              Works with any UPI app — GPay, PhonePe, Paytm, BHIM &amp; more.
+            </p>
+
+            <a
+              className="btn btn--primary payment-page__cta payment-page__cta--upi"
+              href={UPI_DEEP_LINK}
+            >
+              Open UPI app to pay
+              <span className="payment-page__cta-arrow" aria-hidden>
+                ↗
+              </span>
+            </a>
+
+            <p className="payment-page__fine">
+              On a phone, the button opens your default UPI app with our details
+              pre-filled. On desktop, copy the UPI ID above and pay from your
+              phone. Always confirm the name shows{" "}
+              <strong>{analyst.name}</strong> before you approve, and keep the
+              transaction ID for your records.
             </p>
           </div>
 

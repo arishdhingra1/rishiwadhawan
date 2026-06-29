@@ -47,6 +47,9 @@ export const socialLinks: readonly {
 export const PAYMENT_CHECKOUT_URL =
   "https://cosmofeed.com/vig/69d9deaf2f8f3b0014cd10a9" as const;
 
+/** Direct UPI VPA for pay-by-UPI option */
+export const PAYMENT_UPI_VPA = "rishiwadhawan.cf.ra@validaxis" as const;
+
 /** Matches common RA site nav (e.g. tradersstreet.in): home anchors + Legal route */
 export type NavItem = {
   label: string;
