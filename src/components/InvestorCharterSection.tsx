@@ -1,8 +1,7 @@
 /**
- * Investor charter — links to approved document on Google Docs.
+ * Investor charter — links to the approved PDF served from /public.
  */
-const INVESTOR_CHARTER_URL =
-  "https://docs.google.com/document/d/1_oJt6IInKQnOA2eLtPoSLP2r-m3my_h7GSebIbHvhFU";
+const INVESTOR_CHARTER_URL = "/investor-charter.pdf";
 
 export function InvestorCharterSection() {
   return (
@@ -28,7 +27,7 @@ export function InvestorCharterSection() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Open investor charter
+            Investor Charter
           </a>
         </p>
       </div>
